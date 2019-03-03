@@ -25,7 +25,12 @@ public class HumanController : MonoBehaviour
 
         m_animator.SetFloat("MoveSpeed", 15f);
     }
-    
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
+
     private void Update()
     {
         if (m_isMoving)
