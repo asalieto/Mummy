@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
     {
         if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || (Input.GetMouseButtonDown(0)))
         {
-
 #if UNITY_EDITOR
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 #elif (UNITY_ANDROID || UNITY_IPHONE)
