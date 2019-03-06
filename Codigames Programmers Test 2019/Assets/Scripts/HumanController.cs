@@ -49,4 +49,12 @@ public class HumanController : MonoBehaviour
             }
         }
     }
+    
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Mummy")
+        {
+            Die();
+        }
+    }
 }

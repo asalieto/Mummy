@@ -63,15 +63,4 @@ public class MummyController : MonoBehaviour
             GoToNextWaypoint();
         }
     }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        // Debug.Log("OnTriggerEnter");
-
-        if (collider.tag == "Human")
-        {
-            HumanController human = collider.gameObject.GetComponent<HumanController>();
-            human.Die();
-        }
-    }
 }
