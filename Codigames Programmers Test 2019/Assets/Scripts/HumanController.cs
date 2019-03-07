@@ -1,23 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class HumanController : MonoBehaviour
 {
-    [SerializeField]
-    private Animator m_animator;
-    [SerializeField]
-    private NavMeshAgent m_navMeshAgent;
+    [SerializeField] private Animator m_animator;
+    [SerializeField] private NavMeshAgent m_navMeshAgent;
 
     private bool m_isMoving;
+    
+    public Action OnDestroyed;
+    public Action OnGemCollected;
 
     public void Init()
     {
+        m_navMeshAgent.isStopped = false;
+
         m_animator.SetBool("Grounded", true);
+    }
+
+    public void Stop()
+    {
+        m_navMeshAgent.isStopped = true;
     }
 
     public void MoveTo(Vector3 position)
     {
-        // Debug.Log("MoveTo: " + position);
         m_isMoving = true;
 
         m_navMeshAgent.destination = position;
@@ -26,8 +34,12 @@ public class HumanController : MonoBehaviour
         m_animator.SetFloat("MoveSpeed", 15f);
     }
 
-    public void Die()
+    private void Die()
     {
+        if (OnDestroyed != null)
+        {
+            OnDestroyed();
+        }
         Destroy(this.gameObject);
     }
 
@@ -55,6 +67,18 @@ public class HumanController : MonoBehaviour
         if (collider.tag == "Mummy")
         {
             Die();
+        }
+        else if (collider.tag == "Collectable")
+        {
+            //GemController gem = collider.GetComponent<GemController>();
+            //Destroy(gem.gameObject);
+
+            Destroy(collider.gameObject);
+
+            if (OnGemCollected != null)
+            {
+                OnGemCollected();
+            }
         }
     }
 }

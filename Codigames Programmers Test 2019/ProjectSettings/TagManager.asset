@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mummy
   - Human
+  - Collectable
   layers:
   - Default
   - TransparentFX

@@ -2,49 +2,65 @@
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
-    private float m_zoomSpeed = 0.3f;
-    [SerializeField]
-    private float m_dragSpeed = 1f;
+    [SerializeField] private float m_zoomSpeed = 0.3f;
+    [SerializeField] private float m_dragSpeed = 1f;
 
     [Header("Camera bounds")]
-    [SerializeField]
-    private float m_boundsMinX = -15f;
-    [SerializeField]
-    private float m_boundsMaxX = 25f;
-    [SerializeField]
-    private float m_boundsMinY = 5;
-    [SerializeField]
-    private float m_boundsMaxY = 15f;
-    [SerializeField]
-    private float m_boundsMinZ = -45f;
-    [SerializeField]
-    private float m_boundsMaxZ = 10f;
-
-    //BoxCollider as camera bounding box. Not very accesible for the designer
-    //[SerializeField]
-    //private BoxCollider m_cameraBounds;
+    [SerializeField] private float m_boundsMinX = -15f;
+    [SerializeField] private float m_boundsMaxX = 25f;
+    [SerializeField] private float m_boundsMinY = 5;
+    [SerializeField] private float m_boundsMaxY = 15f;
+    [SerializeField] private float m_boundsMinZ = -45f;
+    [SerializeField] private float m_boundsMaxZ = 10f;
+    
+    private bool m_movementEnabled;
 
     private Vector3 m_touchPosition;
     private Vector3 m_currentPosition;
     private Vector3 m_dragStartCameraPosition;
-    
+
+    private void Start()
+    {
+        EnableMovement(false);
+    }
+
     private void Update()
     {
+        if (!m_movementEnabled)
+        {
+            return;
+        }
+
 #if UNITY_EDITOR
         if (Input.mouseScrollDelta.y != 0f)
         {
             Vector3 position = transform.position + (Input.mouseScrollDelta.y * m_zoomSpeed) * transform.forward;
 
-            //if (m_cameraBounds.bounds.Contains(position))
             if (IsInsideBounds(position))
             {
                 transform.position = position;
             }
         }
 #else
-#endif
+        if (Input.touchCount == 2)
+        {
+            Touch firstTouch = Input.GetTouch(0);
+            Touch secondTouch = Input.GetTouch(1);
         
+            Vector2 firstTouchLastPos = firstTouch.position - firstTouch.deltaPosition;
+            Vector2 secondTouchLastPos = secondTouch.position - secondTouch.deltaPosition;
+            
+            float deltaMagnitudeDiff = (firstTouchLastPos - secondTouchLastPos).magnitude - (firstTouch.position - secondTouch.position).magnitude;
+
+            Vector3 position = transform.position + ((deltaMagnitudeDiff * m_zoomSpeed) * transform.forward * -1);
+
+            if (IsInsideBounds(position))
+            {
+                transform.position = position;
+            }
+        }
+#endif
+
         if ((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) || (Input.GetMouseButtonDown(0)))
         {
     #if UNITY_EDITOR
@@ -76,7 +92,6 @@ public class CameraController : MonoBehaviour
         Vector3 position = m_dragStartCameraPosition + (direction * m_dragSpeed);
         position = new Vector3(position.x, transform.position.y, position.z);
 
-        //if (m_cameraBounds.bounds.Contains(position))
         if (IsInsideBounds(position))
         {
             transform.position = position;
@@ -89,5 +104,10 @@ public class CameraController : MonoBehaviour
         return (position.x > m_boundsMinX && position.x < m_boundsMaxX &&
                 position.y > m_boundsMinY && position.y < m_boundsMaxY &&
                 position.z > m_boundsMinZ && position.z < m_boundsMaxZ);
+    }
+
+    public void EnableMovement(bool active)
+    {
+        m_movementEnabled = active;
     }
 }

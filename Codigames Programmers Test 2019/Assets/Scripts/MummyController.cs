@@ -3,12 +3,9 @@ using UnityEngine.AI;
 
 public class MummyController : MonoBehaviour
 {
-    [SerializeField]
-    private BoxCollider m_collider;
-    [SerializeField]
-    private NavMeshAgent m_navMeshAgent;
-    [SerializeField]
-    private PatrolRoute m_patrolWaypoints;
+    [SerializeField] private BoxCollider m_collider;
+    [SerializeField] private NavMeshAgent m_navMeshAgent;
+    [SerializeField] private PatrolRoute m_patrolWaypoints;
 
     private int m_destinationIndex = 0;
     private bool m_activePatrol;
@@ -16,21 +13,26 @@ public class MummyController : MonoBehaviour
     
     private void Start()
     {
-        Init();
+        Stop();
     }
-
+    
     public void Init()
     {
         if (m_patrolWaypoints.Waypoints.Length == 0)
         {
             return;
         }
-
         m_foward = true;
         m_activePatrol = true;
+        m_navMeshAgent.isStopped = true;
 
         m_navMeshAgent.Warp(m_patrolWaypoints.Waypoints[m_destinationIndex].position);
         GoToNextWaypoint();
+    }
+
+    public void Stop()
+    {
+        m_navMeshAgent.isStopped = true;
     }
 
     private void GoToNextWaypoint()

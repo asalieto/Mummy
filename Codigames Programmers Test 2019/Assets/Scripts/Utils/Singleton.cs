@@ -18,10 +18,6 @@ public abstract class Singleton<T> : MonoBehaviour where T : class, new()
         {
             m_instance = this as T;
         }
-        else
-        {
-            Debug.Log(name + ": Error: already initialized");
-        }
     }
 
     private static T m_instance = null;
