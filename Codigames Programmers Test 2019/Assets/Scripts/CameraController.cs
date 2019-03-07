@@ -36,10 +36,11 @@ public class CameraController : MonoBehaviour
         {
             Vector3 position = transform.position + (Input.mouseScrollDelta.y * m_zoomSpeed) * transform.forward;
 
-            if (IsInsideBounds(position))
+            if (!IsInsideBounds(position))
             {
-                transform.position = position;
+                position = FitInsideBounds(position);
             }
+            transform.position = position;
         }
 #else
         if (Input.touchCount == 2)
@@ -53,11 +54,12 @@ public class CameraController : MonoBehaviour
             float deltaMagnitudeDiff = (firstTouchLastPos - secondTouchLastPos).magnitude - (firstTouch.position - secondTouch.position).magnitude;
 
             Vector3 position = transform.position + ((deltaMagnitudeDiff * m_zoomSpeed) * transform.forward * -1);
-
-            if (IsInsideBounds(position))
+        
+            if (!IsInsideBounds(position))
             {
-                transform.position = position;
+                position = FitInsideBounds(position);
             }
+            transform.position = position;
         }
 #endif
 
@@ -92,18 +94,25 @@ public class CameraController : MonoBehaviour
         Vector3 position = m_dragStartCameraPosition + (direction * m_dragSpeed);
         position = new Vector3(position.x, transform.position.y, position.z);
 
-        if (IsInsideBounds(position))
+        if (!IsInsideBounds(position))
         {
-            transform.position = position;
+            position = FitInsideBounds(position);
         }
+        transform.position = position;
     }
 
     private bool IsInsideBounds(Vector3 position)
     {
-        //TODO: maybe instead of deny the entire movement just apply the correct axis movement?
         return (position.x > m_boundsMinX && position.x < m_boundsMaxX &&
                 position.y > m_boundsMinY && position.y < m_boundsMaxY &&
                 position.z > m_boundsMinZ && position.z < m_boundsMaxZ);
+    }
+
+    private Vector3 FitInsideBounds(Vector3 position)
+    {
+        return new Vector3 (Mathf.Clamp(position.x, m_boundsMinX, m_boundsMaxX),
+                            Mathf.Clamp(position.y, m_boundsMinY, m_boundsMaxY),
+                            Mathf.Clamp(position.z, m_boundsMinZ, m_boundsMaxZ));
     }
 
     public void EnableMovement(bool active)
