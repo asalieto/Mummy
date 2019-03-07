@@ -15,8 +15,6 @@ public class HumanController : MonoBehaviour
     public void Init()
     {
         m_navMeshAgent.isStopped = false;
-
-        m_animator.SetBool("Grounded", true);
     }
 
     public void Stop()
@@ -31,7 +29,7 @@ public class HumanController : MonoBehaviour
         m_navMeshAgent.destination = position;
         m_navMeshAgent.isStopped = false;
 
-        m_animator.SetFloat("MoveSpeed", 15f);
+        m_animator.SetFloat("Run", 15f);
     }
 
     private void Die()
@@ -49,10 +47,10 @@ public class HumanController : MonoBehaviour
         {
             if (m_navMeshAgent.remainingDistance <= m_navMeshAgent.stoppingDistance)
             {
-                if (!m_navMeshAgent.hasPath || Mathf.Abs(m_navMeshAgent.velocity.sqrMagnitude) < float.Epsilon)
+                if (!m_navMeshAgent.pathPending && Mathf.Abs(m_navMeshAgent.velocity.sqrMagnitude) < float.Epsilon)
                 {
+                    m_animator.SetFloat("Run", 0f);
                     m_isMoving = false;
-                    m_animator.SetFloat("MoveSpeed", 0f);
                 }
             }
             else

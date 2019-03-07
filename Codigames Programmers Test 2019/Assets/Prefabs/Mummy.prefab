@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 1628201990}
   - component: {fileID: 1628201991}
   - component: {fileID: 1628201992}
+  - component: {fileID: 2097868966}
   m_Layer: 0
   m_Name: Mummy
   m_TagString: Mummy
@@ -1011,8 +1012,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1, z: 0.7}
-  m_Center: {x: 0, y: 0.6, z: 0.1}
+  m_Size: {x: 1.17, y: 1, z: 1.07}
+  m_Center: {x: 0, y: 0.6, z: 0.17}
 --- !u!114 &1628201991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,6 +1051,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
+--- !u!95 &2097868966
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503813555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54a236fa10fadbe4184c92ff9d4df3aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1508656417
 GameObject:
   m_ObjectHideFlags: 0
