@@ -3,15 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] private UIController m_uiController;
-    [SerializeField] private CameraController m_cameraController;
-    [SerializeField] private PlayerController m_playerController;
+    private UIController m_uiController;
+    private CameraController m_cameraController;
+    private PlayerController m_playerController;
     
-    private void Start()
+    public void Init()
     {
+        m_uiController = FindObjectOfType<UIController>();
+        m_cameraController = FindObjectOfType<CameraController>();
+        m_playerController = FindObjectOfType<PlayerController>();
+        
         m_uiController.ShowStartMenu();
     }
-
     public void StartGame()
     {
         m_uiController.HideStartMenu();
