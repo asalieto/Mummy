@@ -6,6 +6,7 @@ public class MummyController : MonoBehaviour
     [SerializeField] private BoxCollider m_collider;
     [SerializeField] private NavMeshAgent m_navMeshAgent;
     [SerializeField] private PatrolRoute m_patrolWaypoints;
+    [SerializeField] private Animator m_animator;
 
     private int m_destinationIndex = 0;
     private bool m_activePatrol;
@@ -25,6 +26,7 @@ public class MummyController : MonoBehaviour
         m_foward = true;
         m_activePatrol = true;
         m_navMeshAgent.isStopped = true;
+        m_animator.SetBool("Idle", false);
 
         m_navMeshAgent.Warp(m_patrolWaypoints.Waypoints[m_destinationIndex].position);
         GoToNextWaypoint();
@@ -33,6 +35,7 @@ public class MummyController : MonoBehaviour
     public void Stop()
     {
         m_navMeshAgent.isStopped = true;
+        m_animator.SetBool("Idle", true);
     }
 
     private void GoToNextWaypoint()

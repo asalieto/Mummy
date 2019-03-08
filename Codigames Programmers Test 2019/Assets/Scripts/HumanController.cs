@@ -20,6 +20,7 @@ public class HumanController : MonoBehaviour
     public void Stop()
     {
         m_navMeshAgent.isStopped = true;
+        m_animator.SetFloat("Run", 0f);
     }
 
     public void MoveTo(Vector3 position)

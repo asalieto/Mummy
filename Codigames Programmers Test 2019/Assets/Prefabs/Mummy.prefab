@@ -1029,6 +1029,7 @@ MonoBehaviour:
   m_collider: {fileID: 1628201990}
   m_navMeshAgent: {fileID: 1628201992}
   m_patrolWaypoints: {fileID: 0}
+  m_animator: {fileID: 2097868966}
 --- !u!195 &1628201992
 NavMeshAgent:
   m_ObjectHideFlags: 0
