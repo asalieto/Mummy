@@ -1064,7 +1064,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0
     m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
@@ -1197,6 +1197,10 @@ PrefabInstance:
       propertyPath: m_patrolWaypoints
       value: 
       objectReference: {fileID: 1337569630}
+    - target: {fileID: 1317622986, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &194748722 stripped
@@ -5787,6 +5791,10 @@ PrefabInstance:
       propertyPath: m_patrolWaypoints
       value: 
       objectReference: {fileID: 1807550324}
+    - target: {fileID: 1317622986, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_SkinnedMotionVectors
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &988625022 stripped
