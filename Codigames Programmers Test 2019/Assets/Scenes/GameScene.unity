@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mummy
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 2106886167}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.593869
@@ -265,10 +269,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 2106886167}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &33792456 stripped
@@ -967,6 +967,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mummy
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 1576010930}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1961308
@@ -1015,10 +1019,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 1576010930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &157340900 stripped
@@ -1145,6 +1145,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mummy
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 1337569630}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.63387
@@ -1193,10 +1197,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 1337569630}
     - target: {fileID: 1317622986, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LightProbeUsage
       value: 1
@@ -2400,6 +2400,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mummy
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 87087326}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.703869
@@ -2448,10 +2452,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 87087326}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &466534286 stripped
@@ -3517,6 +3517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mummy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 1990224641}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.94
@@ -3561,10 +3565,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 1990224641}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &612572991 stripped
@@ -5334,6 +5334,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mummy
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 1743375740}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.29
@@ -5382,10 +5386,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 1743375740}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &907325081 stripped
@@ -5739,6 +5739,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mummy
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 1807550324}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.15387
@@ -5787,10 +5791,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 1807550324}
     - target: {fileID: 1317622986, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_SkinnedMotionVectors
       value: 0
@@ -10789,6 +10789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mummy (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 1541129013}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.61
@@ -10833,10 +10837,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 1541129013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &1966579017 stripped
@@ -11814,6 +11814,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mummy
       objectReference: {fileID: 0}
+    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
+      propertyPath: m_patrolWaypoints
+      value: 
+      objectReference: {fileID: 1040955434}
     - target: {fileID: 1503813557, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.133869
@@ -11862,10 +11866,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1628201991, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
-      propertyPath: m_patrolWaypoints
-      value: 
-      objectReference: {fileID: 1040955434}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c9a8367a58595e468ba97e763363be3, type: 3}
 --- !u!4 &2134957069 stripped
